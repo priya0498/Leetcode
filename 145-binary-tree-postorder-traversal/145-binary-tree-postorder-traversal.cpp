@@ -12,7 +12,8 @@
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> postorder;
+     
+         vector<int> postorder;
         if(root == NULL)
             return postorder;
         stack<TreeNode*> st1 , st2;
@@ -35,5 +36,6 @@ public:
         st2.pop();
     }
     return postorder;
+        
     }
 };
