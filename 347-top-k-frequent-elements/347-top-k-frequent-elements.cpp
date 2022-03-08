@@ -4,8 +4,9 @@ public:
         unordered_map<int , int> m ;
             for(auto i : nums) m[i]++;
                 vector<int>ans;
-                priority_queue<pair<int, int>> p;
-            for(auto i : m) p.push({i.second , i.first});
+              priority_queue<pair<int, int>> p;
+            for(auto i : m)
+            p.push({i.second , i.first});
             while(k--)
             {
                 ans.push_back(p.top().second);
