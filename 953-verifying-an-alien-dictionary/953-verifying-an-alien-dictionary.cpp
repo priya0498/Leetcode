@@ -8,9 +8,9 @@ public:
             while(w1[i1] == w2[i2]){
                 i1++ , i2++ ;
             }
-        int r = order.find(w1[i1]);
-        int s = order.find(w2[i2]);
-              if(r>s)
+        i1 = order.find(w1[i1]);
+        i2 = order.find(w2[i2]);
+              if(i1>i2)
             
                 return false;
             
