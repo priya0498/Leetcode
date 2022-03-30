@@ -1,21 +1,22 @@
 class Solution {
 public:
     bool isAlienSorted(vector<string>& words, string order) {
-        for(int i = 0 ; i < words.size()-1 ; i++){
-            string w1 = words[i];
-            string w2 = words[i+1];
-            int i1 =0 , i2 =0;
-            while(w1[i1] == w2[i2]){
-                i1++ , i2++ ;
+        map<char , int> mp;
+        for(int i = 0 ; i < 26 ; i++)
+            mp[order[i]] = i+1;
+        for(int i = 0 ; i < words.size() - 1 ;i++){
+            int f = 0 , s = 0 ;
+            string first = words[i];
+            string second = words[i+1];
+            while(first[f] == second[s])
+            {
+                f++ ;
+                s++ ;
             }
-        i1 = order.find(w1[i1]);
-        i2 = order.find(w2[i2]);
-              if(i1>i2)
-            
+            if(mp[first[f]] > mp[second[s]])
                 return false;
             
         }
         return true;
-        
     }
 };
