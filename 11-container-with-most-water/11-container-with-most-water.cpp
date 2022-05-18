@@ -7,7 +7,8 @@ public:
         int mx=-1;
         
         while(i<j) {
-            mx=max(mx,min(height[j],height[i])*(j-i));  //formula to calculate area -> min(height[j],height[i])*(j-i)
+            mx=max(mx,min(height[j],height[i])*(j-i)); 
+            
             if(height[i]<height[j])
                 i++;
             else
