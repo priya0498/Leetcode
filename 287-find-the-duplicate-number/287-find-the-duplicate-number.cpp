@@ -7,7 +7,7 @@ public:
                 if(nums[i]==nums[i+1])
                 {
                 ans = nums[i];
-                    break;
+                 //   break;
                 }
             
         }
