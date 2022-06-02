@@ -1,25 +1,24 @@
 class MyHashSet {
-    vector<vector<int>> map;
 public:
-    MyHashSet() {
-        map.resize(1000001/100 + 1, vector<int> (100, -1));
-    }
+
+set<int> s;
+MyHashSet() {
     
-    void add(int key) {
-        int num = key/100;
-        int remain = key%100;
-        map[num][remain] = 1;
-    }
+}
+
+void add(int key) {
+    s.insert(key);
+}
+
+void remove(int key) {
+    s.erase(key);
+}
+
+bool contains(int key) {
+    if (s.find(key) != s.end())
+        return true;
+    else
+        return false;
+}
     
-    void remove(int key) {
-        int num = key/100;
-        int remain = key%100;
-        map[num][remain] = -1;
-    }
-    
-    bool contains(int key) {
-        int num = key/100;
-        int remain = key%100;
-        return map[num][remain] != -1;
-    }
 };
