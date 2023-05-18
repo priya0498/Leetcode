@@ -40,9 +40,9 @@ public:
                 if(divides2 == true && divides1 == true) {
                     ans = len;    
                 }
-                cout << len << " " << divides1 << " " << divides2 <<endl;     
-                len++;     
-             }
+               cout << len << " " << divides1 << " " << divides2 <<endl;     
+len++;     
+             }                
              if(ans == -1) {
                 return "";
              }       
