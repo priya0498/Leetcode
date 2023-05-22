@@ -2,7 +2,7 @@ class Solution {
 public:
     int maximumDifference(vector<int>& nums) {
             int maxi = INT_MIN;
-            int res = -1;
+            int res ;
             for(int i = 0 ; i < nums.size() ; i++)
             {
                     for(int j = i + 1 ; j <nums.size(); j++)
