@@ -1,29 +1,19 @@
 class Solution {
 public:
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-         vector<int> greater;
-            
-         vector<bool> ans;      
-        for(int i = 0 ; i < candies.size(); i++){
-                
-         greater.push_back(candies[i] + extraCandies);
-        }
-            for(int i = 0 ; i < greater.size(); i++){
-                    
-                    bool flag = true;
-                    
-                    for(int j = 0  ; j < candies.size() ; j++){
-                            
-                            if(greater[i]<candies[j]){
-                                    
-                                    flag = false;
-                                    break;
-                            }
-                            
-                    }
-                    ans.push_back(flag);              
+        int maxCandy= 0;
+        vector<bool> ans;
+            for(int i = 0 ; i < candies.size(); i++){
+                    maxCandy = max(maxCandy, candies[i]);
             }
-            
+            for(int i = 0 ; i < candies.size() ; i++){
+                    if(candies[i] + extraCandies >= maxCandy){
+                            ans.push_back(true);
+                    }
+                    else{
+                            ans.push_back(false);
+                    }
+            }
             return ans;
     }
 };
