@@ -20,6 +20,5 @@ public:
         for(int i = 0; i < ans.size(); i++) {
             result.push_back(ans[i].first);
         }
-        return result;
-    }
+        return result;    }
 };
