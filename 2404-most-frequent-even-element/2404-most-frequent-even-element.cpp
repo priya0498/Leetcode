@@ -12,17 +12,17 @@ public:
         int maxVal = INT_MIN;
         int number = -1;
         for(auto i : mp ){
-            if(maxVal <= i.second) {
-                if(maxVal == i.second) {
-                    if(i.first < number) {
-                        number = i.first;
-                    }
-                }
-                else {
-                    maxVal = i.second;
+            
+            if(maxVal == i.second) {
+                if(i.first < number) {
                     number = i.first;
                 }
-            }        
+            }
+            else if(maxVal < i.second){
+                maxVal = i.second;
+                number = i.first;
+            }
+                
         }
         return number;
     }
