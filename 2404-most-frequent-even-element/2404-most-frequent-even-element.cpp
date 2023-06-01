@@ -9,21 +9,21 @@ public:
             }
             
         }
-        int maxVal = INT_MIN;
+        int maxi = INT_MIN;
         int number = -1;
         for(auto i : mp ){
             
-            if(maxVal == i.second) {
-                if(i.first < number) {
+         if(maxi == i.second){
+            if(i.first < number){
+                number = i.first;
+            }
+         }
+            else if(maxi < i.second){
+                    maxi = i.second;
                     number = i.first;
                 }
             }
-            else if(maxVal < i.second){
-                maxVal = i.second;
-                number = i.first;
-            }
-                
-        }
+        
         return number;
     }
 };
