@@ -12,11 +12,7 @@ public:
         }
         reverse(s.begin(), s.end());
          string s2 = s;
-//         for(int i = 0 ; i < s.size() ; i++){
-            
-//          ans = min(s[i] - '0', ans);
-//          ans1 = max(s[i] - '0', ans1);
-//         }
+
         int j = 0;
         while(s[j] == '9') {
             ++j;
@@ -28,21 +24,16 @@ public:
                 s[i] = 9 +'0';
              
             }
-           // else if(s[i] == ans1 + '0'){
-           //      s[i] = ans + '0';
-           //  }
+          
         }
-     //   string s1 = s;
-     
+   
           char temp = s2[0];
         for(int i = 0 ; i < s2.size() ; i++){
            
             if(s2[i] == temp){
                 s2[i] = 0 + '0';
             }
-          // else if(s[i] == ans + '0'){
-          //       s[i] = ans1 + '0';
-          //   }
+         
         }
        cout<<s<<" "<<s2;
       for(int i = 0 ; i <s.size() ;i++){
@@ -52,6 +43,6 @@ public:
           b = b * 10 + s2[i] - '0';
       }
      return a - b;
-        //return 3;
+        
     }
 };
