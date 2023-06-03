@@ -1,22 +1,53 @@
 class Solution {
 public:
     int convertTime(string current, string correct) {
+        int currentHours = 0;
+        int currentMinute = 0;
+        int correctHours = 0;
+        int correctMinute = 0;
         
-        vector<int> s_int(5);
-
-        //count differ , just do it.
-        for(int i{};i<5;i++){
-            s_int[i] = correct[i]-current[i];
-           // cout<<s_int[i];
+        int i = 0;
+        while(current[i] != ':') {
+            currentHours = currentHours * 10 + (current[i] - '0');
+            ++i;
         }
-
-        int hour,min;
-        hour = s_int[0]*10+s_int[1];
-        cout<<hour<<" ";
-        min  = s_int[3]*10+s_int[4];
-        cout<<min;
-        if(min<0) hour-=1,min+=60;
         
-        return hour + min/15 + (min%15)/5 + (min%15%5);
+        ++i;
+        while(i < current.size()) {
+            currentMinute = currentMinute * 10 + (current[i] - '0');
+            ++i;
+        }
+        
+        int j = 0;
+        while(correct[j] != ':') {
+            correctHours = correctHours * 10 + (correct[j] - '0');
+            ++j;
+        }
+        ++j;
+        while(j < correct.size()) {
+            correctMinute = correctMinute * 10 + (correct[j] - '0');
+            ++j;
+        }
+        
+        currentMinute += currentHours * 60;
+        correctMinute += correctHours * 60;
+        vector<int> minutes = {60, 15, 5, 1};
+        int count = 0;
+        for(int i = 0; i < 4; ++i) {
+            int minute = minutes[i];
+                while(currentMinute < correctMinute) {
+                currentMinute += minute;
+                count++;
+            }
+
+            if(currentMinute == correctMinute) {
+                return count;
+            }
+
+            currentMinute -= minute;
+            count--;
+        }
+        
+        return 0;
     }
 };
